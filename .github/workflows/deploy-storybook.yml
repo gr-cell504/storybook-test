@@ -25,6 +25,10 @@ jobs:
       - name: Build Storybook
         run: |
           npm run build-storybook
+      - name: Configure Git
+        run: |
+          git config user.name "gr"
+          git config user.email "rlfud1352@gmail.com"
       - name: Deploy to GitHub Pages
         run: |
           npm run deploy-storybook

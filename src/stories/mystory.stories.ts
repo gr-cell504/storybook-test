@@ -1,29 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
 
-import * as HeaderStories from './Header.stories';
-import type { PageProps } from './Page';
-import { Page } from './Page';
+
+import { html } from 'lit';
+
+const CustomButton = () => html`<button style="background-color: blue; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">`;;
 
 const meta = {
   title: 'Card/UserListCard',
-  render: (args: PageProps) => Page(args),
-} satisfies Meta<PageProps>;
+  render: () => CustomButton(),
+} satisfies Meta;
 
 export default meta;
-type Story = StoryObj<PageProps>;
 
-export const LoggedIn: Story = {
-  args: {
-    // More on composing args: https://storybook.js.org/docs/writing-stories/args#args-composition
-    ...HeaderStories.LoggedIn.args,
-  },
-};
 
 export const myStory = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/7OPvNxuoixxe5sW8fFFibt/Storybook-%EC%97%B0%EB%8F%99?node-id=3387-45024&t=OlsvomDKvLaan0zd-4",
+      url: "https://www.figma.com/design/7OPvNxuoixxe5sW8fFFibt/Storybook-%EC%97%B0%EB%8F%99?node-id=3389-46020&t=RVrMzFrF9vJMC62q-4",
     },
   },
 };

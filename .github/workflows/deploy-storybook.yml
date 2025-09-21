@@ -21,15 +21,12 @@ jobs:
           cache-dependency-path: ./package-lock.json
       - name: Install dependencies
         run: |
-          cd storybook
-          npm ci
+          npm install
       - name: Build Storybook
         run: |
-          cd storybook
           npm run build-storybook
       - name: Deploy to GitHub Pages
         run: |
-          cd storybook
           npm run deploy-storybook
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
